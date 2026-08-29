@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "composite": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@circuit/shared": ["packages/shared/src"],
+      "@circuit/circuit-engine": ["packages/circuit-engine/src"],
+      "@circuit/simulation-sdk": ["packages/simulation-sdk/src"],
+      "@circuit/board-sdk": ["packages/board-sdk/src"],
+      "@circuit/component-sdk": ["packages/component-sdk/src"]
+    }
+  }
+}

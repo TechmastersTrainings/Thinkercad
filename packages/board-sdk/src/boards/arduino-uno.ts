@@ -1,0 +1,38 @@
+import { BoardDefinition } from '@circuit/shared';
+
+export const ArduinoUnoBoard: BoardDefinition = {
+  id: 'board-arduino-uno',
+  name: 'Arduino UNO R3',
+  family: 'Arduino',
+  architecture: 'AVR',
+  clockFrequencyHz: 16000000,
+  flashSizeBytes: 32768,
+  ramSizeBytes: 2048,
+  electricalSpec: {
+    minOperatingVoltage: 5.0,
+    maxOperatingVoltage: 5.0,
+    nominalOperatingVoltage: 5.0,
+    maxCurrentDraw: 0.5,
+    absoluteMaxVoltage: 6.0,
+  },
+  visualDimensions: { width: 320, height: 220 },
+  gpioCapabilities: {
+    'D0': { pinId: 'D0', gpioNumber: 0, digitalInput: true, digitalOutput: true, analogInput: false, dacOutput: false, pwmOutput: false, touchInput: false, i2cSupport: false, spiSupport: false, uartSupport: true, interruptSupport: false },
+    'D1': { pinId: 'D1', gpioNumber: 1, digitalInput: true, digitalOutput: true, analogInput: false, dacOutput: false, pwmOutput: false, touchInput: false, i2cSupport: false, spiSupport: false, uartSupport: true, interruptSupport: false },
+    'D2': { pinId: 'D2', gpioNumber: 2, digitalInput: true, digitalOutput: true, analogInput: false, dacOutput: false, pwmOutput: false, touchInput: false, i2cSupport: false, spiSupport: false, uartSupport: false, interruptSupport: true },
+    'D3': { pinId: 'D3', gpioNumber: 3, digitalInput: true, digitalOutput: true, analogInput: false, dacOutput: false, pwmOutput: true, pwmChannel: 3, touchInput: false, i2cSupport: false, spiSupport: false, uartSupport: false, interruptSupport: true },
+    'D13': { pinId: 'D13', gpioNumber: 13, digitalInput: true, digitalOutput: true, analogInput: false, dacOutput: false, pwmOutput: false, touchInput: false, i2cSupport: false, spiSupport: true, uartSupport: false, interruptSupport: false },
+  },
+  pins: [
+    { id: '5V', name: '5V', label: '5V', signalType: 'POWER_VCC', position: { x: 30, y: 200 }, isPowerVcc: true, maxVoltage: 5.0 },
+    { id: '3V3', name: '3V3', label: '3.3V', signalType: 'POWER_VCC', position: { x: 50, y: 200 }, isPowerVcc: true, maxVoltage: 3.3 },
+    { id: 'GND', name: 'GND', label: 'GND', signalType: 'POWER_GND', position: { x: 70, y: 200 }, isPowerGnd: true, maxVoltage: 0 },
+    { id: 'D13', name: 'D13', label: 'D13 (LED)', signalType: 'DIGITAL_BIDIRECTIONAL', position: { x: 300, y: 20 } },
+    { id: 'D12', name: 'D12', label: 'D12', signalType: 'DIGITAL_BIDIRECTIONAL', position: { x: 280, y: 20 } },
+    { id: 'D11', name: 'D11', label: 'D11 (PWM)', signalType: 'PWM', position: { x: 260, y: 20 } },
+    { id: 'A0', name: 'A0', label: 'A0', signalType: 'ANALOG_INPUT', position: { x: 150, y: 200 } },
+    { id: 'A4', name: 'A4', label: 'A4 (SDA)', signalType: 'I2C_SDA', position: { x: 230, y: 200 } },
+    { id: 'A5', name: 'A5', label: 'A5 (SCL)', signalType: 'I2C_SCL', position: { x: 250, y: 200 } },
+  ],
+  datasheetUrl: 'https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf',
+};

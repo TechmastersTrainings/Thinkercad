@@ -1,0 +1,16 @@
+{
+  "name": "circuit-platform",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Commercial Virtual Embedded Systems and IoT Engineering SaaS Platform",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "dev:web": "pnpm --filter web dev",
+    "dev:api": "cd apps/api && uvicorn src.main:app --reload --port 8000",
+    "test": "pnpm -r run test",
+    "lint": "pnpm -r run lint"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

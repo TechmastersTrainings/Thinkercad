@@ -1,0 +1,38 @@
+import { BoardDefinition } from '@circuit/shared';
+
+export const ArduinoMegaBoard: BoardDefinition = {
+  id: 'board-arduino-mega',
+  name: 'Arduino Mega 2560',
+  family: 'Arduino',
+  architecture: 'AVR',
+  clockFrequencyHz: 16000000,
+  flashSizeBytes: 262144,
+  ramSizeBytes: 8192,
+  electricalSpec: {
+    minOperatingVoltage: 5.0,
+    maxOperatingVoltage: 5.0,
+    nominalOperatingVoltage: 5.0,
+    maxCurrentDraw: 0.8,
+    absoluteMaxVoltage: 6.0,
+  },
+  visualDimensions: { width: 360, height: 240 },
+  gpioCapabilities: {
+    'D0': { pinId: 'D0', gpioNumber: 0, digitalInput: true, digitalOutput: true, analogInput: false, dacOutput: false, pwmOutput: false, touchInput: false, i2cSupport: false, spiSupport: false, uartSupport: true, interruptSupport: true },
+    'D1': { pinId: 'D1', gpioNumber: 1, digitalInput: true, digitalOutput: true, analogInput: false, dacOutput: false, pwmOutput: false, touchInput: false, i2cSupport: false, spiSupport: false, uartSupport: true, interruptSupport: true },
+    'D20': { pinId: 'D20', gpioNumber: 20, digitalInput: true, digitalOutput: true, analogInput: false, dacOutput: false, pwmOutput: false, touchInput: false, i2cSupport: true, spiSupport: false, uartSupport: false, interruptSupport: true },
+    'D21': { pinId: 'D21', gpioNumber: 21, digitalInput: true, digitalOutput: true, analogInput: false, dacOutput: false, pwmOutput: false, touchInput: false, i2cSupport: true, spiSupport: false, uartSupport: false, interruptSupport: true },
+  },
+  pins: [
+    { id: '5V', name: '5V', label: '5V Power', signalType: 'POWER_VCC', position: { x: 30, y: 220 }, isPowerVcc: true, maxVoltage: 5.0 },
+    { id: '3V3', name: '3V3', label: '3.3V Power', signalType: 'POWER_VCC', position: { x: 50, y: 220 }, isPowerVcc: true, maxVoltage: 3.3 },
+    { id: 'GND', name: 'GND', label: 'GND Ground', signalType: 'POWER_GND', position: { x: 70, y: 220 }, isPowerGnd: true, maxVoltage: 0 },
+    { id: 'D13', name: 'D13', label: 'D13 (LED)', signalType: 'DIGITAL_BIDIRECTIONAL', position: { x: 340, y: 20 } },
+    { id: 'D12', name: 'D12', label: 'D12 (PWM)', signalType: 'PWM', position: { x: 320, y: 20 } },
+    { id: 'D11', name: 'D11', label: 'D11 (PWM)', signalType: 'PWM', position: { x: 300, y: 20 } },
+    { id: 'D20', name: 'D20', label: 'D20 (SDA)', signalType: 'I2C_SDA', position: { x: 280, y: 20 } },
+    { id: 'D21', name: 'D21', label: 'D21 (SCL)', signalType: 'I2C_SCL', position: { x: 260, y: 20 } },
+    { id: 'A0', name: 'A0', label: 'A0 Analog', signalType: 'ANALOG_INPUT', position: { x: 150, y: 220 } },
+    { id: 'A1', name: 'A1', label: 'A1 Analog', signalType: 'ANALOG_INPUT', position: { x: 170, y: 220 } },
+  ],
+  datasheetUrl: 'https://docs.arduino.cc/resources/datasheets/A000067-datasheet.pdf',
+};

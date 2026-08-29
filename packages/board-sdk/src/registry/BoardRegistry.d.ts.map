@@ -1,0 +1,1 @@
+{"version":3,"file":"BoardRegistry.d.ts","sourceRoot":"","sources":["BoardRegistry.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,iBAAiB,CAAC;AAOlD,qBAAa,aAAa;IACxB,OAAO,CAAC,MAAM,CAAC,MAAM,CAMlB;WAEW,aAAa,CAAC,KAAK,EAAE,eAAe,GAAG,IAAI;WAI3C,QAAQ,CAAC,EAAE,EAAE,MAAM,GAAG,eAAe,GAAG,SAAS;WAIjD,YAAY,IAAI,eAAe,EAAE;CAGhD"}
