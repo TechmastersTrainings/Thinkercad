@@ -1,0 +1,22 @@
+services:
+  # Python FastAPI Backend Web Service
+  - type: web
+    name: thinkercad-backend-api
+    runtime: python
+    buildCommand: cd apps/api && pip install -r requirements.txt
+    startCommand: cd apps/api && uvicorn src.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: DATABASE_URL
+        fromDatabase:
+          name: thinkercad-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+
+databases:
+  # Managed PostgreSQL Database Instance
+  - name: thinkercad-db
+    databaseName: circuit_db
+    user: circuit_user
