@@ -68,7 +68,7 @@ export const TinkercadComponentDrawer: React.FC<{ isOpen: boolean }> = ({ isOpen
     | { kind: 'comp'; id: string; name: string; description: string; category: string };
 
   const allItems: DrawerItem[] = [
-    ...boards.map((b) => ({ kind: 'board' as const, id: b.id || '', name: b.name || b.id || '', description: b.description || '', category: 'BOARDS' })),
+    ...boards.map((b) => ({ kind: 'board' as const, id: b.id || '', name: b.name || b.id || '', description: (b as any).description || '', category: 'BOARDS' })),
     ...allComponents.map((c) => ({ kind: 'comp' as const, id: c.id || '', name: c.name || c.id || '', description: c.description || '', category: c.category || 'OTHER' })),
   ];
 
